@@ -28,7 +28,6 @@
       min-height: 100vh;
     }
 
-    /* ── HEADER ── */
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -56,25 +55,8 @@
       border: 1px solid rgba(108,99,255,0.3);
     }
 
-    .header-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
-
-    .api-input {
-      padding: 7px 12px;
-      font-size: 12px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--muted);
-      font-family: monospace;
-      width: 260px;
-    }
-
-    .api-input:focus { outline: none; border-color: var(--accent); color: var(--text); }
-
-    /* ── LAYOUT ── */
     .container { max-width: 1000px; margin: 2rem auto; padding: 0 1.5rem; }
 
-    /* ── PROFILES ── */
     .profiles-bar {
       display: flex; gap: 10px; margin-bottom: 1.5rem; flex-wrap: wrap;
     }
@@ -88,7 +70,6 @@
       font-size: 12px; font-weight: 500;
       cursor: pointer;
       transition: all 0.15s;
-      display: flex; align-items: center; gap: 6px;
     }
 
     .profile-chip.active {
@@ -99,9 +80,7 @@
 
     .profile-chip:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ── MAIN GRID ── */
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-
     @media(max-width:640px){ .grid { grid-template-columns: 1fr; } }
 
     .card {
@@ -116,7 +95,6 @@
       text-transform: uppercase; letter-spacing: 0.08em;
       color: var(--muted);
       margin-bottom: 1.1rem;
-      display: flex; align-items: center; gap: 6px;
     }
 
     .field { margin-bottom: 12px; }
@@ -133,13 +111,9 @@
       transition: border-color 0.15s;
     }
 
-    .field input:focus, .field select:focus {
-      outline: none; border-color: var(--accent);
-    }
-
+    .field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
     .field select option { background: var(--surface); }
 
-    /* Baseline readonly */
     .baseline-item {
       display: flex; justify-content: space-between; align-items: center;
       padding: 8px 0;
@@ -150,7 +124,6 @@
     .baseline-label { color: var(--muted); font-size: 12px; }
     .baseline-value { color: var(--text); font-weight: 500; font-size: 12px; text-align: right; }
 
-    /* ── BUTTON ── */
     .btn-analyze {
       width: 100%; padding: 14px;
       font-size: 15px; font-weight: 700;
@@ -159,18 +132,15 @@
       border: none; border-radius: 10px;
       cursor: pointer; font-family: inherit;
       transition: opacity 0.15s;
-      letter-spacing: 0.3px;
     }
     .btn-analyze:hover { opacity: 0.9; }
     .btn-analyze:disabled { opacity: 0.4; cursor: not-allowed; }
 
-    /* ── SPINNER ── */
     .spinner {
       display: none; text-align: center;
       padding: 2rem; color: var(--muted); font-size: 13px;
     }
 
-    /* ── RESULT ── */
     .result-card {
       display: none;
       background: var(--surface);
@@ -198,21 +168,13 @@
 
     .score-ring {
       margin-left: auto;
-      font-size: 22px; font-weight: 800;
-      color: var(--text);
+      font-size: 22px; font-weight: 800; color: var(--text);
     }
     .score-ring span { font-size: 12px; color: var(--muted); font-weight: 400; }
 
-    /* Score bar */
     .score-bar-wrap { margin-bottom: 1.25rem; }
-    .score-bar-bg {
-      height: 6px; background: var(--surface2);
-      border-radius: 10px; overflow: hidden;
-    }
-    .score-bar-fill {
-      height: 100%; border-radius: 10px;
-      transition: width 0.8s cubic-bezier(.4,0,.2,1);
-    }
+    .score-bar-bg { height: 6px; background: var(--surface2); border-radius: 10px; overflow: hidden; }
+    .score-bar-fill { height: 100%; border-radius: 10px; transition: width 0.8s cubic-bezier(.4,0,.2,1); }
 
     .action-banner {
       display: flex; align-items: center; gap: 10px;
@@ -224,24 +186,14 @@
     .action-MFA   { background: rgba(255,173,66,0.1); color: var(--orange); border: 1px solid rgba(255,173,66,0.25); }
     .action-BLOCK { background: rgba(255,76,106,0.1); color: var(--red); border: 1px solid rgba(255,76,106,0.25); }
 
-    /* Anomaly tags */
     .anomalies { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
-    .tag {
-      font-size: 12px; padding: 4px 12px; border-radius: 6px;
-      font-weight: 500;
-    }
+    .tag { font-size: 12px; padding: 4px 12px; border-radius: 6px; font-weight: 500; }
     .tag.danger { background: rgba(255,76,106,0.12); color: var(--red); border: 1px solid rgba(255,76,106,0.25); }
     .tag.warn   { background: rgba(255,173,66,0.12); color: var(--orange); border: 1px solid rgba(255,173,66,0.25); }
     .tag.ok     { background: rgba(0,212,170,0.12); color: var(--green); border: 1px solid rgba(0,212,170,0.25); }
 
     .divider { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
 
-    .analysis-text {
-      font-size: 13px; color: #a0a8c8;
-      line-height: 1.8; white-space: pre-wrap;
-    }
-
-    /* Comparison table */
     .comparison-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 1.25rem; }
     .comparison-table th {
       text-align: left; color: var(--muted);
@@ -249,18 +201,16 @@
       border-bottom: 1px solid var(--border);
     }
     .comparison-table td {
-      padding: 8px 8px; border-bottom: 1px solid rgba(46,50,72,0.5);
-      color: var(--text);
+      padding: 8px 8px; border-bottom: 1px solid rgba(46,50,72,0.5); color: var(--text);
     }
     .comparison-table tr:last-child td { border-bottom: none; }
     .status-ok   { color: var(--green); font-weight: 700; }
     .status-warn { color: var(--orange); font-weight: 700; }
     .status-bad  { color: var(--red); font-weight: 700; }
 
-    footer {
-      text-align: center; padding: 2rem;
-      font-size: 11px; color: var(--muted);
-    }
+    .analysis-text { font-size: 13px; color: #a0a8c8; line-height: 1.8; white-space: pre-wrap; }
+
+    footer { text-align: center; padding: 2rem; font-size: 11px; color: var(--muted); }
   </style>
 </head>
 <body>
@@ -269,27 +219,20 @@
   <div class="logo">🛡</div>
   <h1>FraudGuard AI</h1>
   <span class="badge">Login Risk Prevention</span>
-  <div class="header-right">
-    <input class="api-input" type="password" id="apiKey" placeholder="🔑 Paste your Anthropic API key…"/>
-  </div>
 </header>
 
 <div class="container">
 
-  <!-- Pre-built user profiles -->
   <div style="font-size:12px; color:var(--muted); margin-bottom:8px;">Select a test profile — baseline is auto-loaded:</div>
   <div class="profiles-bar">
-    <div class="profile-chip active" onclick="loadProfile('alice')">👤 Alice Martin <small>(normal user)</small></div>
-    <div class="profile-chip" onclick="loadProfile('bob')">👤 Bob Tremblay <small>(senior client)</small></div>
-    <div class="profile-chip" onclick="loadProfile('carlos')">👤 Carlos Diaz <small>(business account)</small></div>
+    <div class="profile-chip active" onclick="loadProfile('alice', this)">👤 Alice Martin <small>(normal user)</small></div>
+    <div class="profile-chip" onclick="loadProfile('bob', this)">👤 Bob Tremblay <small>(senior client)</small></div>
+    <div class="profile-chip" onclick="loadProfile('carlos', this)">👤 Carlos Diaz <small>(business account)</small></div>
   </div>
 
   <div class="grid">
-
-    <!-- LEFT: Login attempt to analyze -->
     <div class="card">
       <div class="card-title">⚡ Login attempt — incoming</div>
-
       <div class="field">
         <label>IP Address</label>
         <input id="ip" type="text" value="185.220.101.47"/>
@@ -334,14 +277,10 @@
       </div>
     </div>
 
-    <!-- RIGHT: User baseline (auto-loaded, read-only display) -->
     <div class="card">
       <div class="card-title">📋 User baseline — <span id="profileName">Alice Martin</span></div>
-      <div id="baselineDisplay">
-        <!-- filled by JS -->
-      </div>
+      <div id="baselineDisplay"></div>
     </div>
-
   </div>
 
   <button class="btn-analyze" id="analyzeBtn" onclick="analyze()">
@@ -350,36 +289,23 @@
 
   <div class="spinner" id="spinner">⏳ FraudGuard AI is analyzing…</div>
 
-  <!-- Result -->
   <div class="result-card" id="resultCard">
     <div class="result-top">
       <div class="result-user" id="resultUser"></div>
       <span class="risk-pill" id="riskPill"></span>
       <div class="score-ring" id="scoreEl"></div>
     </div>
-
     <div class="score-bar-wrap">
       <div class="score-bar-bg">
         <div class="score-bar-fill" id="scoreBar" style="width:0%"></div>
       </div>
     </div>
-
     <div class="action-banner" id="actionBanner"></div>
-
-    <table class="comparison-table" id="compTable">
-      <thead>
-        <tr>
-          <th>Factor</th>
-          <th>This session</th>
-          <th>User baseline</th>
-          <th>Status</th>
-        </tr>
-      </thead>
+    <table class="comparison-table">
+      <thead><tr><th>Factor</th><th>This session</th><th>Baseline</th><th>Status</th></tr></thead>
       <tbody id="compBody"></tbody>
     </table>
-
     <div class="anomalies" id="anomaliesEl"></div>
-
     <hr class="divider"/>
     <div class="analysis-text" id="analysisEl"></div>
   </div>
@@ -389,11 +315,9 @@
 <footer>FraudGuard AI · Fraud Prevention Demo · Built by Oumaima Boujadi · Powered by Claude AI (Anthropic)</footer>
 
 <script>
-  // ── USER PROFILES (baseline data) ──
   const PROFILES = {
     alice: {
-      name: 'Alice Martin',
-      id: 'USR-00482',
+      name: 'Alice Martin', id: 'USR-00482',
       locations: 'Montreal, CA / Toronto, CA',
       device: 'Desktop — Chrome, macOS',
       hours: '08:00 AM – 09:00 PM',
@@ -401,8 +325,7 @@
       avgTransactions: '3–5/day, avg $120',
     },
     bob: {
-      name: 'Bob Tremblay',
-      id: 'USR-01104',
+      name: 'Bob Tremblay', id: 'USR-01104',
       locations: 'Quebec City, CA',
       device: 'Mobile — Safari, iPhone',
       hours: '07:00 AM – 06:00 PM',
@@ -410,8 +333,7 @@
       avgTransactions: '1–2/day, avg $350',
     },
     carlos: {
-      name: 'Carlos Diaz',
-      id: 'USR-00789',
+      name: 'Carlos Diaz', id: 'USR-00789',
       locations: 'Montreal, CA / Miami, US',
       device: 'Desktop — Edge, Windows',
       hours: '09:00 AM – 11:00 PM',
@@ -422,16 +344,13 @@
 
   let currentProfile = 'alice';
 
-  function loadProfile(key) {
+  function loadProfile(key, el) {
     currentProfile = key;
     document.querySelectorAll('.profile-chip').forEach(c => c.classList.remove('active'));
-    event.target.closest('.profile-chip').classList.add('active');
-
+    el.classList.add('active');
     const p = PROFILES[key];
     document.getElementById('profileName').textContent = p.name;
-
-    const display = document.getElementById('baselineDisplay');
-    display.innerHTML = `
+    document.getElementById('baselineDisplay').innerHTML = `
       <div class="baseline-item"><span class="baseline-label">User ID</span><span class="baseline-value">${p.id}</span></div>
       <div class="baseline-item"><span class="baseline-label">Usual locations</span><span class="baseline-value">${p.locations}</span></div>
       <div class="baseline-item"><span class="baseline-label">Usual device</span><span class="baseline-value">${p.device}</span></div>
@@ -441,14 +360,9 @@
     `;
   }
 
-  // Init
-  loadProfile('alice');
+  loadProfile('alice', document.querySelector('.profile-chip'));
 
-  // ── ANALYZE ──
   async function analyze() {
-    const apiKey = document.getElementById('apiKey').value.trim();
-    if (!apiKey) { alert('Please enter your Anthropic API key in the top bar.'); return; }
-
     const p = PROFILES[currentProfile];
     const btn = document.getElementById('analyzeBtn');
     const spinner = document.getElementById('spinner');
@@ -504,14 +418,10 @@ Return ONLY this JSON, no markdown:
 }`;
 
     try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
+      // Appel vers notre backend Vercel — pas directement vers Anthropic
+      const res = await fetch('/api/analyze', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-          'anthropic-version': '2023-06-01',
-          'anthropic-dangerous-allow-browser': 'true'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           model: 'claude-haiku-4-5-20251001',
           max_tokens: 1000,
@@ -528,7 +438,7 @@ Return ONLY this JSON, no markdown:
       const text = raw.content.map(b => b.text || '').join('');
       const clean = text.replace(/```json|```/g, '').trim();
       const result = JSON.parse(clean);
-      renderResult(p, attempt, result);
+      renderResult(p, result);
 
     } catch(e) {
       alert('Error: ' + e.message);
@@ -538,7 +448,7 @@ Return ONLY this JSON, no markdown:
     spinner.style.display = 'none';
   }
 
-  function renderResult(p, attempt, r) {
+  function renderResult(p, r) {
     document.getElementById('resultUser').textContent = p.name + ' · ' + p.id;
 
     const pill = document.getElementById('riskPill');
@@ -552,8 +462,8 @@ Return ONLY this JSON, no markdown:
     bar.style.background = r.riskScore >= 70 ? 'var(--red)' : r.riskScore >= 40 ? 'var(--orange)' : 'var(--green)';
 
     const actionMap = {
-      'ALLOW':        { label: '✓  ALLOW — Grant access normally',                    cls: 'action-ALLOW' },
-      'MFA_REQUIRED': { label: '⚠  MFA REQUIRED — Challenge before granting access',  cls: 'action-MFA'   },
+      'ALLOW':        { label: '✓  ALLOW — Grant access normally', cls: 'action-ALLOW' },
+      'MFA_REQUIRED': { label: '⚠  MFA REQUIRED — Challenge before granting access', cls: 'action-MFA' },
       'BLOCK':        { label: '✕  BLOCK — Potential account takeover. Freeze session.', cls: 'action-BLOCK' }
     };
     const a = actionMap[r.recommendedAction] || actionMap['ALLOW'];
@@ -561,7 +471,6 @@ Return ONLY this JSON, no markdown:
     banner.textContent = a.label;
     banner.className = 'action-banner ' + a.cls;
 
-    // Comparison table
     const tbody = document.getElementById('compBody');
     tbody.innerHTML = '';
     (r.comparison || []).forEach(row => {
@@ -575,7 +484,6 @@ Return ONLY this JSON, no markdown:
       </tr>`;
     });
 
-    // Anomaly tags
     const tagsEl = document.getElementById('anomaliesEl');
     tagsEl.innerHTML = '';
     (r.anomalies || []).forEach(f => {
